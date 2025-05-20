@@ -1,5 +1,6 @@
-import React, { use } from 'react';
+import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface PokemonTitleProps {
   name: string;
@@ -10,14 +11,14 @@ const PokemonTitle: React.FC<PokemonTitleProps> = ({ name }) => {
     <div className="flex items-center">
       {/* Pokéball on the left */}
       <div className="w-28 h-28 relative -mr-10">
-        <a href="/">
-        <Image
-          src="/pokeball.png"
-          alt="Pokéball"
-          fill
-          className="object-contain rounded-full"
-        />
-        </a>
+        <Link href="/">
+          <Image
+            src="/pokeball.png"
+            alt="Pokéball"
+            fill
+            className="object-contain rounded-full"
+          />
+        </Link>
       </div>
 
       <div className=" w-[200px] h-24 bg-red-600 text-white font-bold border-4  border-red-800 border-r-0  border-l-0  items-center justify-ceenter z-0 overflow-hidden z-10">

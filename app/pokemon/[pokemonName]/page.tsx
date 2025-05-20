@@ -3,16 +3,15 @@ import React from 'react';
 import PokemonTitle from './(component)/title';
 import Card from './(component)/Card';
 import Skill from './(component)/Skill';
-import Evaluation from './(component)/Evaluation';
 import EvolutionChain from './(component)/Evaluation';
-type pokemonProps = {
-    params : {
-        pokemonName : string
-    }
-}
-export default async function PokemonInfo ({params}:pokemonProps) 
+// type pokemonProps = {
+//     params : {
+//         pokemonName : string
+//     }
+// }
+export default async  function PokemonInfo ({params}: {params: Promise<{ pokemonName: string }>}) 
 {
-    const { pokemonName } = await params;
+    const { pokemonName } = await params
     const decodeName = decodeURIComponent(pokemonName);
     const pokemonInfo = await fetchPokemonById(decodeName);
     console.log({pokemonInfo});
@@ -28,7 +27,6 @@ export default async function PokemonInfo ({params}:pokemonProps)
             <div className=" flex w-full justify-center space-x-10 items-center p-10">
                 {/* Card */}
                 <Card 
-                id={decodeName}
                 name={pokemonInfo.name} 
                 image={pokemonInfo.image} 
                 types={pokemonInfo.types} 

@@ -1,6 +1,6 @@
 "use client"
 import { Pokemon } from '@/schema/pokemon';
-import React, { useState } from 'react';
+import React from 'react';
 import PokemonCard from '../PokemonCard/pokemonCard';
 import { useRouter } from 'next/navigation';
 
